@@ -1,7 +1,7 @@
 import Test from "./Test";
 
 export default {
-    title:'Example/Test',
+    title:'Test System/Section/Test',
     component: Test,
     argTypes: {
         backgroundColor: { control: 'color'}
@@ -18,7 +18,7 @@ export default {
     ]
 }
 
-const Template = args => <Test {...args} />
+const Template = (args, { loaded: {data} }) => <Test {...args} {...data} />
 
 export const SubTitle = Template.bind({})
 
@@ -26,3 +26,9 @@ SubTitle.args = {
     isTesting: true,
     Editable: false
 }
+
+SubTitle.loaders = [
+    async () => ({
+        data: await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).json()
+    })
+]

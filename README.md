@@ -80,3 +80,19 @@ export default {
 StoryBook에서 하나의 단락은 Story로 구분한다.
 
 <img src="gitImages\decorators.jpg">
+
+## 섹션 구분
+
+UI로 파일을 정리할 때 가장 중요한 것은 어느 폴더 어느 위치에 존재하냐 이다.
+StoryBook에선 이 방법으로 정리할 수 있는데,
+
+```javascript
+export default {
+  title: "Test System/Section/Test",
+  component: Test,
+};
+```
+
+이렇게 부모와 자식 태그를 / 로 구분하게 된다면 아래와 같이 표시된다.
+
+<img src="gitImages\List.jpg">
