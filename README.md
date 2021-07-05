@@ -59,3 +59,24 @@ SubTitle.args = {
 <img src="gitImages\Create_Test.jpg">
 
 출력된 리스트는 위와같음
+
+## decorator
+
+컨텐츠가 화면의 일정부분 margin을 가졌으면 좋겠다고 생각할 수 있는데, 이는 Component의 스타일을 주는 것 보다 decorator 속성을 이용하면 매우 간편하게 할 수 있다.
+
+```javascript
+export default {
+  component: TestComponent,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: "30px" }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
+```
+
+StoryBook에서 하나의 단락은 Story로 구분한다.
+
+<img src="gitImages\decorators.jpg">

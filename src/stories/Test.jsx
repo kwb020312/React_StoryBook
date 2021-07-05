@@ -1,3 +1,4 @@
-export default function Test() {
-    return <h1>Hello!!</h1>
+export default function Test({color}) {
+    const isClicked = () => console.log('Clicked!!')
+    return <h1 onClick={isClicked} style={{color}}>Hello!!</h1>
 }
