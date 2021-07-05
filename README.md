@@ -96,3 +96,25 @@ export default {
 이렇게 부모와 자식 태그를 / 로 구분하게 된다면 아래와 같이 표시된다.
 
 <img src="gitImages\List.jpg">
+
+## 섹션 정렬
+
+섹션에 정렬을 주고 싶다면 파라미터 값에 조건을 넣어 보내면 된다.
+
+options안에 있는 storySort함수는 기본적으로 JS sort() 함수와 같은 기능을 하기 때문에 같이 동작시키면 됨
+
+```javascript
+const Template = (args, { loaded: { data } }) => <Test {...args} {...data} />;
+
+export const SubTitle = Template.bind({});
+
+SubTitle.parameters = {
+  options: {
+    storySort: (a, b) => a.localeCompare(b),
+  },
+};
+```
+
+위의 경우에는 a 와 b를 비교하여 알파벳순으로 정렬하였음
+
+<img src="gitImages\Sorted_Lists.jpg">

@@ -32,3 +32,9 @@ SubTitle.loaders = [
         data: await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).json()
     })
 ]
+
+SubTitle.parameters = {
+    options: {
+        storySort: (a,b) => a.localeCompare(b)
+    }
+}
