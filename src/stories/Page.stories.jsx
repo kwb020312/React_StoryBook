@@ -19,3 +19,9 @@ export const LoggedOut = Template.bind({});
 LoggedOut.args = {
   ...HeaderStories.LoggedOut.args,
 };
+
+export const Test = Template.bind({})
+Test.args = {
+  isTesting: true,
+  nowLoading: false
+}

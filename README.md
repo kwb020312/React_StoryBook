@@ -25,3 +25,37 @@ yarn storybook
 위 명령들을 실행한다면 6006번 포트로 적용된 StoryBook UI가 실행된다
 
 <img src="gitImages\Start_StoryBook.jpg">
+
+## 편집
+
+기본적인 화면에선 여러 장점이 나오는데, 기본적으로 Hot Reload가 지원되므로 저장 시 즉시 화면이 리렌더링 된다.
+
+다양한 상태를 UI를 통하여 관리하고 변경/수정 하여 웹애플리케이션의 테스트가 용이하다.
+
+StoryBook의 기본 구조는 컴포넌트를 불러 온 stories.js에서 관리하는데,
+
+```javascript
+//Test.stories.jsx
+import React from "react";
+import OtherComponent from "./OtherComponent.jsx";
+
+export default {
+  title: "Test",
+  component: OtherComponent,
+};
+
+const Template = (args) => <OtherComponent {...args} />;
+
+export const SubTitle = Template.bind({});
+
+SubTitle.args = {
+  title: "test",
+  label: "testLabel",
+};
+```
+
+위의 구조를 갖는다.
+
+<img src="gitImages\Create_Test.jpg">
+
+출력된 리스트는 위와같음
